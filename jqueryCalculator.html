@@ -84,10 +84,23 @@
         var secondNumber = null;
         var operator = ""; 
         var result; 
+
+        $(".number").on("click", function(){
+            if(firstNumber === null){
+                firstNumber = this.value;
+            }   else if(!(firstNumber === null) && (operator === "")){
+                    firstNumber = firstNumber + this.value;
+            }   else if(!(operator === "") && (secondNumber === null)) {
+                    secondNumber = this.value;
+            }    
+            console.log(firstNumber);
+            console.log(secondNumber);
+            console.log(operator);
+        })
         
         $(".operator").on("click", function(){
             if(!(firstNumber === null) && secondNumber === null){
-                operator = this.val();
+                operator = this.value;
             }
         });
 
