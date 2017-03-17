@@ -86,8 +86,13 @@
         var result; 
         
         $(".operator").on("click", function(){
-            
+            if(!(firstNumber === null) && secondNumber === null){
+                operator = this.val();
+            }
         });
+
+
+        
 
     });
 
