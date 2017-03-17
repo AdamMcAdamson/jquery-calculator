@@ -86,8 +86,11 @@
         var result; 
         
         $(".operator").on("click", function(){
-            
+            if(!(firstNumber === null) && secondNumber === null){
+                operator = this.val();
+            }
         });
+
 
         // clear out values printed to result div, added class "clearNumber" to restult <h1>s
         $(".clear").on("click", function(){
@@ -97,6 +100,7 @@
             operator = "";
             result = null;
         })
+
 
     });
 
