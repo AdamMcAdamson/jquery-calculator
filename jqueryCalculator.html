@@ -96,12 +96,16 @@
             console.log(firstNumber);
             console.log(secondNumber);
             console.log(operator);
+            display("Number - " + this.value);
         })
         
         // Handles Displaying the calculator state. Called after every button click.
-        function() {
+        function display(event) {
+            console.log(event);
             $("#first-number").text(firstNumber);
-            $("#operator").text()
+            $("#operator").text(operator);
+            $("#second-number").text(secondNumber);
+            $("#result").text(result);
         }
 
         // Handles 'Operator' button clicks. Determines operator.
@@ -128,6 +132,7 @@
                         break;
                 }
             }
+            display("Operator - " + this.value);
         });
 
         // Handles 'Equals' button clicks. Calculates result.
@@ -154,16 +159,18 @@
                         break;
                 }
             }
+            display("Operator - " + this.value);
         });
 
 
-        // clear out values printed to result div, added class "clearNumber" to restult <h1>s
+        // clear out values printed to result div, added class "clearNumber" to result <h1>s
         $(".clear").on("click", function(){
             $(".clearNumber").empty();
             firstNumber = null;
             secondNumber = null;
             operator = "";
             result = null;
+            display("Operator - " + this.value);
         })
 
 
