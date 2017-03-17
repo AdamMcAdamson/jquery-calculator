@@ -92,7 +92,9 @@
                     firstNumber = firstNumber + this.value;
             }   else if(!(operator === "") && (secondNumber === null)) {
                     secondNumber = this.value;
-            }    
+            }   else if(result === null){
+                    secondNumber = secondNumber + this.value;
+            } 
             console.log(firstNumber);
             console.log(secondNumber);
             console.log(operator);
