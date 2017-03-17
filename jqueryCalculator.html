@@ -82,7 +82,7 @@
     // Your code here...
         var firstNumber = null;
         var secondNumber = null;
-        var operator; 
+        var operator = ""; 
         var result; 
         
         $(".operator").on("click", function(){
@@ -92,7 +92,30 @@
         });
 
 
-        
+        $(".equals").on("click", function(){
+            if(!(secondNumber === null)){
+                switch(operator){
+                    case "minus":
+                        result = firstNumber - secondNumber;
+                        break;
+                    case "plus":
+                        result = firstNumber + secondNumber;
+                        break;
+                    case "times":
+                        result = firstNumber * secondNumber;
+                        break;
+                    case "divide":
+                        result = firstNumber / secondNumber;
+                        break;
+                    case "power":
+                        result = Math.pow(firstNumber, secondNumber);
+                        break;
+                    default:
+                        console.log("[ERROR] Operator Not Recognized: 'operator' = " + operator);
+                        break;
+                }
+            }
+        });
 
     });
 
