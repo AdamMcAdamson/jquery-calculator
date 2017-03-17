@@ -88,16 +88,17 @@
         $(".number").on("click", function(){
             if(firstNumber === null){
                 firstNumber = this.value;
+                firstNumber = parseInt(firstNumber);
             }   else if(!(firstNumber === null) && (operator === "")){
                     firstNumber = firstNumber + this.value;
+                    firstNumber = parseInt(firstNumber);
             }   else if(!(operator === "") && (secondNumber === null)) {
                     secondNumber = this.value;
+                    secondNumber = parseInt(secondNumber);
             }   else if(result === null){
                     secondNumber = secondNumber + this.value;
+                    secondNumber = parseInt(secondNumber);
             } 
-            console.log(firstNumber);
-            console.log(secondNumber);
-            console.log(operator);
             display("Number - " + this.value);
         })
         
@@ -139,6 +140,7 @@
 
         // Handles 'Equals' button clicks. Calculates result.
         $(".equal").on("click", function(){
+            result = parseInt(result);
             if(!(secondNumber === null)){
                 switch(operator){
                     case "-":
@@ -172,7 +174,7 @@
             secondNumber = null;
             operator = "";
             result = null;
-            display("Operator - " + this.value);
+            display("Clear - " + this.value);
         })
 
 
