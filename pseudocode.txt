@@ -1,0 +1,21 @@
+if a number button is clicked ->
+	append digit to current number
+	update number display
+
+if an operator button is clicked ->
+	check for number ->
+		if 1 number has been pressed -> 
+			CONTINUE
+		else ->
+			CANCEL
+	log operator
+	display operator
+
+if equals is pressed ->
+	check for 2 numbers and 1 operator
+	log operation output
+	display output
+
+if clear is pressed ->
+	clear display
+	clear log
