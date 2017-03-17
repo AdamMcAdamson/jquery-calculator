@@ -85,10 +85,36 @@
         var operator = ""; 
         var result; 
         
+        // Handles Displaying the calculator state. Called after every button click.
+        function() {
+            $("#first-number").text(firstNumber);
+            $("#operator").text()
+        }
+
         // Handles 'Operator' button clicks. Determines operator.
         $(".operator").on("click", function(){
             if(!(firstNumber === null) && secondNumber === null){
-                operator = this.val();
+                switch(this.attr("value")){
+                    case "minus":
+                        operator = "-";
+                        break;
+                    case "plus":
+                        operator = "+";
+                        break;
+                    case "times":
+                        operator = "X";
+                        break;
+                    case "divide":
+                        operator = "/";
+                        break;
+                    case "power":
+                        operator = "^";
+                        break;
+                    default:
+                        console.log("[ERROR] Operator Not Recognized: 'operator' = " + operator);
+                        break;
+                }
+
             }
         });
 
@@ -96,19 +122,19 @@
         $(".equals").on("click", function(){
             if(!(secondNumber === null)){
                 switch(operator){
-                    case "minus":
+                    case "-":
                         result = firstNumber - secondNumber;
                         break;
-                    case "plus":
+                    case "+":
                         result = firstNumber + secondNumber;
                         break;
-                    case "times":
+                    case "X":
                         result = firstNumber * secondNumber;
                         break;
-                    case "divide":
+                    case "/":
                         result = firstNumber / secondNumber;
                         break;
-                    case "power":
+                    case "^":
                         result = Math.pow(firstNumber, secondNumber);
                         break;
                     default:
