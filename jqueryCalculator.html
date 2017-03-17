@@ -84,6 +84,19 @@
         var secondNumber = null;
         var operator = ""; 
         var result; 
+
+        $(".number").on("click", function(){
+            if(firstNumber === null){
+                firstNumber = this.value;
+            }   else if(!(firstNumber === null) && (operator === "")){
+                    firstNumber = firstNumber + this.value;
+            }   else if(!(operator === "") && (secondNumber === null)) {
+                    secondNumber = this.value;
+            }    
+            console.log(firstNumber);
+            console.log(secondNumber);
+            console.log(operator);
+        })
         
         // Handles Displaying the calculator state. Called after every button click.
         function() {
@@ -94,7 +107,7 @@
         // Handles 'Operator' button clicks. Determines operator.
         $(".operator").on("click", function(){
             if(!(firstNumber === null) && secondNumber === null){
-                switch(this.attr("value")){
+                switch(this.value){
                     case "minus":
                         operator = "-";
                         break;
@@ -114,7 +127,6 @@
                         console.log("[ERROR] Operator Not Recognized: 'operator' = " + operator);
                         break;
                 }
-
             }
         });
 
