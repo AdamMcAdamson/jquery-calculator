@@ -64,11 +64,11 @@
                     <h3 class="panel-title">Result</h3>
                 </div>
                 <div class="panel-body">
-                    <h1 id="first-number"></h1>
-                    <h1 id="operator"></h1>
-                    <h1 id="second-number"></h1>
+                    <h1 id="first-number" class="clearNumber"></h1>
+                    <h1 id="operator" class="clearNumber"></h1>
+                    <h1 id="second-number" class="clearNumber"></h1>
                     <hr>
-                    <h1 id="result"></h1>
+                    <h1 id="result" class="clearNumber"></h1>
                 </div>
             </div>
         </div>
@@ -82,12 +82,21 @@
     // Your code here...
         var firstNumber = null;
         var secondNumber = null;
-        var operator; 
+        var operator = ""; 
         var result; 
         
         $(".operator").on("click", function(){
             
         });
+
+        // clear out values printed to result div, added class "clearNumber" to restult <h1>s
+        $(".clear").on("click", function(){
+            $(".clearNumber").empty();
+            firstNumber = null;
+            secondNumber = null;
+            operator = "";
+            result = null;
+        })
 
     });
 
